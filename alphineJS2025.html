@@ -7,13 +7,24 @@
     <title>AlpineJS 2025</title>
     <link rel="stylesheet" href="style.css">
     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <script src="index.js"></script>
 </head>
 
 <body>
-    <div x-data="{count: 0}">
-        <p>Current Value of Count is: <span x-text="count"></span></p>
-        <button x-on:click="count++">Increase count by 1</button>
-    </div>
+
+<!--This doesn't rely on importing the file index.js-->
+<!--<div x-data="{count: 0, name: 'Mario'}">-->
+<!--    <h1>Hi, <span x-text="name"></span></h1>-->
+<!--    <p>Current Value of Count is: <span x-text="count"></span></p>-->
+<!--    <button x-on:click="count++">Increase count by 1</button>-->
+<!--</div>-->
+
+<div x-data="counter">
+    <h1>Hi, <span x-text="name"></span></h1>
+    <p>Current Value of Count is: <span x-text="count"></span></p>
+    <button x-on:click="count++">Increase count by 1</button>
+</div>
+
 </body>
 
 </html>
