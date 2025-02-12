@@ -17,6 +17,12 @@
 
         <!-- username -->
         <div class="form-field">
+            <!-- Attribute bind on class attribute for color change if username longer than 10 -->
+             <!-- Just like in Vue.js we can use a ":" shorthand for bind so :class instead of x-bind:class -->
+            <p class="hint" x-bind:class="{'warning': username.length>10}">
+                <!-- Make sure user doesn't enter more characters than allowed -->
+                <span x-text="15 - username.length"></span> characters remaining.
+            </p>
             <label>
                 <span></span>Username:
                 <!-- Bind value in input field to data object via x-model -->
@@ -61,6 +67,9 @@
 
         <!-- short bio -->
         <div class="form-field">
+            <p class="hint" :class="{'warning': bio.length>90}">
+                <span x-text="100 - bio.length"></span> characters remaining.
+            </p>
             <label>
                 <span>Short Bio:</span>
                 <textarea maxlength="100" x-model="bio"></textarea>
