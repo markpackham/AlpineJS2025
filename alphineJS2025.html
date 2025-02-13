@@ -16,9 +16,9 @@
         <h1>Ninja Signup Form</h1>
 
         <!-- Events in Alpine won't work unless they exist within / have as a parent an x-data directive (such as the form one here) -->
-        <button type="button" x-on:click="console.log('click')">click</button>
+        <button type="button" x-on:click.shift="console.log('click')">click whilst holding shift button</button>
         <!-- You can use x-on: or the shorthand @ -->
-        <button type="button" @mouseleave="console.log('mouse leave')">mouseleave</button>
+        <button type="button" @mouseleave.ctrl="console.log('mouse leave')">mouseleave whilst holding ctrl button</button>
         <button type="button" @dblclick="console.log('double click')">dblclick</button>
         <input type="text" @keyup="console.log('keyup')">
 
