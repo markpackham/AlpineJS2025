@@ -12,7 +12,7 @@
 
 <body>
 
-    <form x-data="signupForm" @submit="submitForm">
+    <form x-data="signupForm" @submit.prevent="submitForm">
         <h1>Ninja Signup Form</h1>
 
         <!-- Events in Alpine won't work unless they exist within / have as a parent an x-data directive (such as the form one here) -->
