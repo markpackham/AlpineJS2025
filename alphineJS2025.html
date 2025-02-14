@@ -18,7 +18,8 @@
         <!-- Events in Alpine won't work unless they exist within / have as a parent an x-data directive (such as the form one here) -->
         <button type="button" x-on:click.shift="console.log('click')">click whilst holding shift button</button>
         <!-- You can use x-on: or the shorthand @ -->
-        <button type="button" @mouseleave.ctrl="console.log('mouse leave')">mouseleave whilst holding ctrl button</button>
+        <button type="button" @mouseleave.ctrl="console.log('mouse leave')">mouseleave whilst holding ctrl
+            button</button>
         <button type="button" @dblclick="console.log('double click')">dblclick</button>
         <input type="text" @keyup="console.log('keyup')">
 
@@ -43,9 +44,9 @@
         <div class="form-field password">
             <label>
                 <span>Password:</span>
-                <input type="password" x-model="password">
+                <input :type="showPass ? 'text' : 'password'" x-model="password">
             </label>
-            <div x-text="password"></div>
+            <button type="button" @click="showPass = !showPass"><span x-text="showPass ? 'Hide' : 'Show'"></span></button>
         </div>
 
         <!-- confirm password -->
