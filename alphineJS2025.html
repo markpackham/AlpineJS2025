@@ -38,6 +38,9 @@
             </label>
             <!-- We get this output from index.js data object -->
             <div x-text="username"></div>
+            <template x-if="errors.username">
+                <p class="error" x-text="errors.username"></p>
+            </template>
         </div>
 
         <!-- password -->
@@ -46,7 +49,14 @@
                 <span>Password:</span>
                 <input :type="showPass ? 'text' : 'password'" x-model="password">
             </label>
-            <button type="button" @click="showPass = !showPass"><span x-text="showPass ? 'Hide' : 'Show'"></span></button>
+            <button type="button" @click="showPass = !showPass"><span
+                    x-text="showPass ? 'Hide' : 'Show'"></span></button>
+
+            <!-- x-if will only work in template tags & not just any other Html -->
+            <!-- x-if add or removes content, it doesn't just show or hide it -->
+            <template x-if="errors.password">
+                <p class="error" x-text="errors.password"></p>
+            </template>
         </div>
 
         <!-- confirm password -->
@@ -55,7 +65,9 @@
                 <span>Confirm Password:</span>
                 <input type="password" x-model="passwordConfirm">
             </label>
-            <div x-text="passwordConfirm"></div>
+            <template x-if="errors.passwordConfirm">
+                <p class="error" x-text="errors.passwordConfirm"></p>
+            </template>
         </div>
 
         <!-- belt color -->
@@ -70,7 +82,9 @@
                     <option value="brown">Brown</option>
                 </select>
             </label>
-            <div x-text="belt"></div>
+            <template x-if="errors.belt">
+                <p class="error" x-text="errors.belt"></p>
+            </template>
         </div>
 
         <!-- short bio -->
@@ -83,6 +97,9 @@
                 <textarea maxlength="100" x-model="bio"></textarea>
             </label>
             <div x-text="bio"></div>
+            <template x-if="errors.bio">
+                <p class="error" x-text="errors.bio"></p>
+            </template>
         </div>
 
         <!-- newsletter signup -->
