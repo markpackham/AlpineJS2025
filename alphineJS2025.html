@@ -75,11 +75,11 @@
             <label>Belt Color:
                 <select x-model="belt">
                     <option value="">Select a belt</option>
-                    <option value="black">Black</option>
-                    <option value="white">White</option>
-                    <option value="red">Red</option>
-                    <option value="orange">Orange</option>
-                    <option value="brown">Brown</option>
+                    <!-- x-for loop won't work unless in a template tag -->
+                     <!-- we bind / :value every belt choice -->
+                    <template x-for="choice in beltChoices">
+                        <option :value="choice" x-text="choice"></option>
+                    </template>
                 </select>
             </label>
             <template x-if="errors.belt">
