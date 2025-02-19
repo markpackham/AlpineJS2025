@@ -54,6 +54,7 @@
 
             <!-- x-if will only work in template tags & not just any other Html -->
             <!-- x-if add or removes content, it doesn't just show or hide it -->
+            <!-- YOU MUST ONLY HAVE ONE root element -->
             <template x-if="errors.password">
                 <p class="error" x-text="errors.password"></p>
             </template>
@@ -76,8 +77,11 @@
                 <select x-model="belt">
                     <option value="">Select a belt</option>
                     <!-- x-for loop won't work unless in a template tag -->
-                     <!-- we bind / :value every belt choice add add a UNIQUE key -->
-                    <template x-for="choice in beltChoices" :key="choice">
+                    <!-- we bind / :value every belt choice add add a UNIQUE key -->
+                    <!-- since we have a key we can use an index -->
+                    <!-- YOU MUST ONLY HAVE ONE root element -->
+                    <template x-for="(choice, index) in beltChoices" :key="choice">
+                        <!-- <option :value="choice" x-text="index"></option> -->
                         <option :value="choice" x-text="choice"></option>
                     </template>
                 </select>
