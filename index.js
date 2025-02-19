@@ -9,6 +9,7 @@ document.addEventListener("alpine:init", () => {
     newsletter: true,
     showPass: false,
     errors: {},
+    beltChoices: ['black', 'white', 'red', 'orange', 'brown'],
 
     validateForm() {
       this.errors = {};
