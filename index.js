@@ -10,6 +10,7 @@ document.addEventListener("alpine:init", () => {
     showPass: false,
     errors: {},
     beltChoices: ['black', 'white', 'red', 'orange', 'brown'],
+    success: false,
 
     validateForm() {
       this.errors = {};
@@ -54,6 +55,8 @@ document.addEventListener("alpine:init", () => {
 
         // Use standard JavaScript reset to clear the form
         $event.target.reset()
+
+        this.success = true;
       }
     },
   }));
