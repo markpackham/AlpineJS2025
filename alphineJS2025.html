@@ -119,7 +119,9 @@
         <!-- submit button -->
         <button type="submit">Submit</button>
 
-        <div class="overlay" x-show="success">
+        <!-- Only show if form filling successful
+        Use x-cloak & change CSS to hide modal when page loads since Html loads before Alpine.js takes effect -->
+        <div class="overlay" x-show="success" x-cloak>
             <div class="modal">
                 <h2>Thank You</h2>
                 <button type="button" @click="success = false">Close</button>

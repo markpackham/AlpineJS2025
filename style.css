@@ -129,3 +129,8 @@ button[type="submit"] {
   border-radius: 4px;
   cursor: pointer;
 }
+/* Keep modal hidden via cloak while page loading so modal doesn't automatically appear
+Since there is a delay between the Html loading and Alpine.js working */
+[x-cloak] {
+  display: none !important;
+}
