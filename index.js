@@ -41,7 +41,7 @@ document.addEventListener("alpine:init", () => {
     // eg this.username="" this.password=""
     submitForm($event) {
       this.validateForm();
-      console.log(this.errors);
+      // console.log(this.errors);
 
       // Get an array of keys from the error object
       if (Object.keys(this.errors).length === 0) {
