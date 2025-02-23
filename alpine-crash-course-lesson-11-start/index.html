@@ -1,0 +1,32 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Alpine.js Crash Course</title>
+  <link rel="stylesheet" href="styles.css">
+
+  <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+  <script src="index.js"></script>
+</head>
+<body>
+
+  <div x-data="demo">
+  
+    <!-- fetching data with init -->
+    <div>
+      <h3>Posts:</h3>
+      <ul>
+        
+      </ul>
+    </div>
+  
+    <!-- $watch example -->
+    <div>
+      <h3>Change the Background:</h3>
+      <input type="text" x-model="bg" placeholder="Enter a bg colour" />
+    </div>
+
+  </div>
+
+</body>
+</html>
