@@ -122,6 +122,10 @@
         <!-- Only show if form filling successful
         Use x-cloak & change CSS to hide modal when page loads since Html loads before Alpine.js takes effect -->
         <div class="overlay" x-show="success" x-cloak x-transition.opacity.duration.500ms>
+            <!-- only show this if success value is true via x-show -->
+            <!-- x-transition starting location off-screen since we want to make it drop from the screen top
+             off-screen & on-screen are custom CSS classes I made in style.css - .modal.on-screen .modal.off-screen 
+             -->
             <div class="modal" x-show="success" x-transition:enter-start="off-screen"
                 x-transition:enter-end="on-screen">
                 <h2>Thank You</h2>
